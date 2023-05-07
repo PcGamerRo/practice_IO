@@ -121,5 +121,8 @@ public class Grupa implements Fisiere {
         FileInputStream fileInputStream = new FileInputStream(numeFisie);
         //ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
+
+        // MERGE DOAR PENTRU BufferedReader !!!
+
     }
 }
