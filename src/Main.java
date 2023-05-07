@@ -58,5 +58,8 @@ public class Main {
         obj.restoreFromTxtStreams("fisierGrupa.txt");
         //obj.restoreFromDat("fisierGrupa.dat");
         System.out.println(obj.toString());
+
+        obj.saveToCSV("fisierGrupa.csv");
+
     }
 }

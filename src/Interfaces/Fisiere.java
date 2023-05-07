@@ -12,4 +12,7 @@ public interface Fisiere {
     void restoreFromTxtStreams(String numeFisier) throws IOException;
     void restoreFromDatStream(String numeFisie) throws IOException;
 
+    void saveToCSV(String numeFisier) throws IOException;
+
+
 }

@@ -125,4 +125,15 @@ public class Grupa implements Fisiere {
         // MERGE DOAR PENTRU BufferedReader !!!
 
     }
+
+    @Override
+    public void saveToCSV(String numeFisier) throws IOException {
+        FileWriter fileWriter = new FileWriter(numeFisier);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        PrintWriter printWriter = new PrintWriter(bufferedWriter);
+        for(var x : studenti) {
+            printWriter.write(x.getId() + "," + x.getNume() + "\n");
+        }
+        printWriter.close();
+    }
 }
