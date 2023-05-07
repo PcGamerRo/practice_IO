@@ -55,8 +55,8 @@ public class Main {
         grupa.saveToDat("fisierGrupa.dat");
 
         Grupa obj = new Grupa(1059);
-        obj.restoreFromTxt("fisierGrupa.txt");
-        obj.restoreFromDat("fisierGrupa.dat");
+        obj.restoreFromTxtStreams("fisierGrupa.txt");
+        //obj.restoreFromDat("fisierGrupa.dat");
         System.out.println(obj.toString());
     }
 }

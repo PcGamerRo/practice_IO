@@ -5,6 +5,7 @@ import Interfaces.Fisiere;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Grupa implements Fisiere {
     int numar;
@@ -101,5 +102,24 @@ public class Grupa implements Fisiere {
             studenti.add((Student) objectInputStream.readObject());
         }
         objectInputStream.close();
+    }
+
+    @Override
+    public void restoreFromTxtStreams(String numeFisier) throws IOException {
+        FileReader fileReader = new FileReader(numeFisier);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        studenti =  bufferedReader.lines()
+                .map(linie -> new Student(
+                        Integer.parseInt(linie.split(" ")[0]),
+                        linie.split(" ")[1]
+                ))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void restoreFromDatStream(String numeFisie) throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(numeFisie);
+        //ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+        DataInputStream dataInputStream = new DataInputStream(fileInputStream);
     }
 }
